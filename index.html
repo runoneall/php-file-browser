@@ -33,7 +33,7 @@ $host = $_SERVER['HTTP_HOST'];
     background: lightgray;
 ">
 
-<form action="upload.php" method="post" enctype="multipart/form-data">
+<form action="upload.html" method="post" enctype="multipart/form-data">
     <label style="font-size: 15px;">上传文件</label>
     <input type="file" name="file" id="file">
     <progress id="progress" value="0" max="100"></progress>
@@ -50,7 +50,7 @@ $host = $_SERVER['HTTP_HOST'];
         formData.append('file', file);
 
         const xhr = new XMLHttpRequest();
-        xhr.open('POST', 'upload.php');
+        xhr.open('POST', 'upload.html');
         xhr.upload.addEventListener('progress', (e) => {
             const progress = Math.round((e.loaded / e.total) * 100);
             progressBar.value = progress;
@@ -63,7 +63,7 @@ $host = $_SERVER['HTTP_HOST'];
     });
 </script>
 
-<form action="create_dir.php" method="post" enctype="multipart/form-data">
+<form action="create_dir.html" method="post" enctype="multipart/form-data">
     <input type="text" placeholder="新建文件夹" id="folderName" name="folderName" required>
     <input type="submit" name="create" value="创建">
 </form>
@@ -75,13 +75,13 @@ $host = $_SERVER['HTTP_HOST'];
     <?php if ($file === '.' || $file === '..') continue; ?>
     <?php if (is_dir($current_dir . '/' . $file)) : ?>
       <li> 
-        <a href="rmdirfile.php?dir=<?php echo $current_dir . '/' . $file; ?>">删除</a> 
+        <a href="rmdirfile.html?dir=<?php echo $current_dir . '/' . $file; ?>">删除</a> 
         <label>|</label>
         <a href="?dir=<?php echo $current_dir . '/' . $file; ?>"><?php echo $file; ?></a> 
       </li>
     <?php else : ?>
       <li> 
-        <a href="rmdirfile.php?file=<?php echo $current_dir . '/' . $file; ?>">删除</a> 
+        <a href="rmdirfile.html?file=<?php echo $current_dir . '/' . $file; ?>">删除</a> 
         <label>|</label>
         <a href="<?php echo $current_dir . '/' . $file; ?>"><?php echo $file; ?></a> 
       </li>
