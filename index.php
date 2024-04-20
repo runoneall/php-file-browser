@@ -75,14 +75,14 @@ $host = $_SERVER['HTTP_HOST'];
     <?php if ($file === '.' || $file === '..') continue; ?>
     <?php if (is_dir($current_dir . '/' . $file)) : ?>
       <li> 
-        <!-- <a href="rmdirfile.php?dir=<?php echo $current_dir . '/' . $file; ?>">删除</a> -->
-        <!-- <label>|</label> -->
+        <a href="rmdirfile.php?dir=<?php echo $current_dir . '/' . $file; ?>">删除</a>
+        <label>|</label>
         <a href="?dir=<?php echo $current_dir . '/' . $file; ?>"><?php echo $file; ?></a> 
       </li>
     <?php else : ?>
       <li> 
-        <!-- <a href="rmdirfile.php?file=<?php echo $current_dir . '/' . $file; ?>">删除</a> -->
-        <!-- <label>|</label> -->
+        <a href="rmdirfile.php?file=<?php echo $current_dir . '/' . $file; ?>">删除</a>
+        <label>|</label>
         <a href="<?php echo $current_dir . '/' . $file; ?>"><?php echo $file; ?></a> 
       </li>
     <?php endif; ?>
