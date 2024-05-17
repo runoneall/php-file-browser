@@ -17,15 +17,24 @@ $host = $_SESSION["HTTP_Host"];
                 width: 90%;
                 height: 600px;
             }
-            input:focus {
+            #FileName {
+                border: none;
+            }
+            #FileName:focus {
                 outline: none;
+            }
+            #inputField {
+                border: 2px solid black;
+                background-color: lightgray;
             }
         </style>
     </head>
     <body>
         <form action="edit_text.php" method="post">
             编辑
-            <input type="text" id="FileName" name="FileName" value=<?php echo $file_path ?> readonly>
+            <input type="text" id="FileName" name="FileName" 
+                value=<?php echo $file_path ?> 
+                size="<?php echo (strlen($file_path)/2) ?>" readonly>
             文件<br><br>
             <textarea id="inputField" name="inputField"><?php echo $file_content ?></textarea>
             <br>

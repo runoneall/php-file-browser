@@ -26,6 +26,8 @@ function is_binary($filename) {
     return strpos($mime_type, 'text') === false;
 }
 
+header('Content-Type: charset=utf-8');
+
 ?>
 
 <!DOCTYPE html>
@@ -115,6 +117,15 @@ function is_binary($filename) {
 <?php if ($current_dir !== $root_dir) : ?>
     <a href="?dir=<?php echo dirname($current_dir); ?>">返回上一级</a>
 <?php endif; ?>
+
+<hr>
+
+<!-- <form action="admin-login.php" method="post" enctype="multipart/form-data">
+    进入后台
+    <input type="text" placeholder="用户名" id="UserName" name="UserName" required>
+    <input type="password" placeholder="密码" id="Password" name="Password" required>
+    <input type="submit" value="登录">
+</form> -->
 
 <?php
 // echo $current_dir;
