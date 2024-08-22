@@ -5,7 +5,7 @@ $host = $_SESSION["HTTP_Host"];
 if (isset($_FILES['file'])) {
     $file = $_FILES['file'];
 
-    // 检查文件大小
+    // 检查文件大小 (如果你需要)
     if ($file['size'] > 1024*1024*40) {
         echo "文件太大，请上传小于 40MB 的文件。";
         exit;
